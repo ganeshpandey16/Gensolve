@@ -1,0 +1,155 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Image</title>
+    <style>
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 10vh; /* Adjust as needed */
+            align-items: center;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        nav h1 {
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        nav img {
+            width: 500px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href=""><img src="image.png" alt="Logo"></a>
+        <a href=""><h1>GenSolve</h1></a>
+    </nav>
+    <h1>Input Image</h1>
+    <img src="{{ url_for('static', filename='uploads/' + input_image) }}" alt="Input Image">
+    <h1>Output Image</h1>
+    <img src="{{ url_for('static', filename='output/' + output_image) }}" alt="Output Image">
+    <br>
+    <a href="{{ url_for('upload_image') }}">Upload Another Image</a>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Image</title>
+    <style>
+        /* Navigation bar styling */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 10vh;
+            align-items: center;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        nav h1 {
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        nav img {
+            width: 500px;
+            height: auto;
+        }
+
+        /* Image container styling */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 80%;
+            background-color: #f9f9f9;
+        }
+
+        .image-box {
+            /* width: 45%; */
+            text-align: center;
+        }
+
+        .image-box img {
+            /* max-width: 100%; */
+            /* height: auto; */
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .image-box h1 {
+            margin-bottom: 20px;
+        }
+
+        .upload-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .upload-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('upload_image') }}"><img src="{{ url_for('static', filename='image.png') }}" alt="Logo"></a>
+        <a href=""><h1>GenSolve</h1></a>
+    </nav>
+
+    <!-- Container for the images -->
+    <div class="image-container">
+        <div class="image-box">
+            <h1>Input Image</h1>
+            <img src="{{ url_for('static', filename='uploads/' + input_image) }}" alt="Input Image">
+        </div>
+        <div class="image-box">
+            <h1>Output Image</h1>
+            <img src="{{ url_for('static', filename='output/' + output_image) }}" alt="Output Image">
+        </div>
+    </div>
+
+    <!-- Upload another image link -->
+    <a class="upload-link" href="{{ url_for('upload_image') }}">Upload Another Image</a>
+</body>
+</html>

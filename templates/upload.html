@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 10vh; /* Adjust as needed */
+            align-items: center;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        nav h1 {
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        nav img {
+            width: 500px;
+            height: auto;
+        }
+
+        /* Centering the form in a box */
+        .upload-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh; /* Adjust the height as needed */
+        }
+
+        .upload-box {
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .upload-box h1 {
+            margin-bottom: 20px;
+        }
+
+        .upload-box input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        .upload-box button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .upload-box button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('upload_image') }}"><img src="{{ url_for('static', filename='image.png') }}" alt="Logo"></a>
+        <a href=""><h1>GenSolve</h1></a>
+    </nav>
+
+    <div class="upload-container">
+        <div class="upload-box">
+            <h1>Upload an Image</h1>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
