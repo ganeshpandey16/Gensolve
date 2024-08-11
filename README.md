@@ -1,4 +1,5 @@
-Run the main.py to directly check for images through the web app
-Counter.py works better with stright lines shapes regularization
-Spline.py works for smooth curved shapes
-Completion.py completes the incomplete shape using the symmetry lines
+Run main.py to directly check images through the web app.
+Counter.py is best for regularizing straight line shapes.
+Spline.py is used for smooth curved shapes.
+Completion.py completes incomplete shapes using symmetry lines.
+I have also attached GenSolve_Doc.pdf, which contains the complete documentation of the approach and the code, including the input and output for several test cases.
